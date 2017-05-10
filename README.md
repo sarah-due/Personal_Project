@@ -1,3 +1,5 @@
+Boilerplate Setup for Personal Project--Recipe Database/Food App
+
 # Boilerplate: Knex.js
 
 Phase 1 boilerplate project with:
