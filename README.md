@@ -1,24 +1,28 @@
-Boilerplate Setup for Personal Project--Recipe Database/Food App
+Personal Goals:
 
-# Boilerplate: Knex.js
+To be able to start with a small, functional app that I can expand and make more interactive as we learn more advanced coding throughout the course.
 
-Phase 1 boilerplate project with:
+To get better at working with servers/routes and using them to navigate information from tables.
 
- - Express
- - Knex
- - SQLite3
- - Express Handlebars
- - body-parser
- - AVA
- - Node Inspector
- - nodemon
+To expand on my css/design skills to make something beautiful.
+
+Learn how to make a "like" function.
+
+To incorporate APIs, maybe with google maps...
+
+Learn how to make a search bar to navigate the website.
 
 
-## Install
+User Stories:
 
-```
-npm install
-npm run dev
-```
+I can browse recipes by category.
 
-Be sure to check out the other npm scripts too.
+I can browse recipes based on GF/DF/Vegan tags.
+
+I can comment on a recipe.
+
+I can "like" a recipe.
+
+I can view most liked recipes.
+
+If I don't feel like baking my recipe, I can find the closest bakery to me to go buy something instead!
