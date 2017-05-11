@@ -9,11 +9,9 @@ configureDatabase(test)
 
 var db = require('../db')
 
-test('testFunc prints a message to console', function(t) {
-  var expected = 'I am a working function!'
-  return db.testFunc(t.context.connection)
-    .then(function(result) {
-      var actual = testFunc()
+test('testFunc returns a string', function(t) {
+      var expected = 'I am a working function!'
+      var actual = db.testFunc()
+      console.log(actual)
       t.is(expected, actual)
-    })
 })

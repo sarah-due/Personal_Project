@@ -3,6 +3,6 @@ module.exports = {
   testFunc
 }
 
-function testFunc(connection) {
-  console.log('I am a working function!')
+function testFunc() {
+  return('I am a working function!')
 }
