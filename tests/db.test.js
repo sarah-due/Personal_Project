@@ -15,3 +15,12 @@ test('testFunc returns a string', function(t) {
       console.log(actual)
       t.is(expected, actual)
 })
+
+test('showCategories lists all categories', function(t){
+    var expected = 9
+    return db.showCategories(t.context.connection)
+    .then(function(results) {
+      var actual = results.length
+      t.is(expected, actual)
+    })
+  })
