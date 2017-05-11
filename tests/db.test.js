@@ -8,3 +8,12 @@ var configureDatabase = require('./helpers/database-config')
 configureDatabase(test)
 
 var db = require('../db')
+
+test('testFunc prints a message to console', function(t) {
+  var expected = 'I am a working function!'
+  return db.testFunc(t.context.connection)
+    .then(function(result) {
+      var actual = testFunc()
+      t.is(expected, actual)
+    })
+})

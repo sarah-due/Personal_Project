@@ -1,13 +1,8 @@
-//
-// module.exports = {
-//   getUser: getUser,
-//   getUsers: getUsers
-// }
-//
-// function getUsers (connection) {
-//   return connection('users').select()
-// }
-//
-// function getUser (id, connection) {
-//   return connection('users').where('id', id)
-// }
+
+module.exports = {
+  testFunc
+}
+
+function testFunc(connection) {
+  console.log('I am a working function!')
+}

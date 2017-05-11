@@ -18,7 +18,7 @@
   "license": "ISC",
   "homepage": "https://github.com/sarah-due/Personal_Project/blob/master/README.md",
   "devDependencies": {
-    "ava": "^0.18.0",
+    "ava": "^0.18.2",
     "cheerio": "^0.22.0",
     "nodemon": "^1.11.0",
     "sqlite3": "^3.1.8",
@@ -28,6 +28,7 @@
     "body-parser": "^1.16.0",
     "express": "^4.14.1",
     "express-handlebars": "^3.0.0",
-    "knex": "^0.12.6"
+    "knex": "^0.12.9",
+    "sqlite3": "^3.1.8"
   }
 }
