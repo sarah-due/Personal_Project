@@ -23,6 +23,7 @@ test('GET /home/category/:id', (t) => {
   .expect(200)
   .then((res) => {
     const $ = cheerio.load(res.text)
+    console.log($('h4').first().text());
     t.is($('h4').first().text(), 'By Chef: Ina Garten aka The Barefoot Contessa')
   })
 })

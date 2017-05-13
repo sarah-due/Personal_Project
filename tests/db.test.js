@@ -26,6 +26,6 @@ test('showCategories lists all categories', function(t){
   test('listRecipes lists all recipes by category', function(t) {
     return db.listRecipes(2201, t.context.connection)
     .then(function(results) {
-      t.is(2, results.length)
+      t.is(1, results.length)
     })
   })
