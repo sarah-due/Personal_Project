@@ -3,21 +3,30 @@ var router = express.Router()
 
 var db = require('../db')
 
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   req.app.get('connection')
   res.redirect('/home')
 })
 
-router.get('/home', function (req, res) {
+router.get('/home', (req, res) => {
   db.showCategories(req.app.get('connection'))
-    .then(function(categories) {
+    .then((categories) => {
       res.render('index', {categories})
     })
-    .catch(function (err) {
+    .catch((err) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 
+router.get('/home/category/:id', (req, res) => {
+  db.listRecipes(req.params.id, req.app.get('connection'))
+    .then((recipes) => {
+      res.render('categories', {recipes})
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
 
 
 module.exports = router
