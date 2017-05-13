@@ -13,7 +13,7 @@ test('GET /home', (t) => {
     .expect(200)
     .then((res) => {
       const $ = cheerio.load(res.text)
-      console.log($('li').first().text());
+      console.log($('h2').first().text());
       t.is($('h2').first().text(), 'Cakes and Tortes')
     })
 })
