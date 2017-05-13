@@ -17,10 +17,15 @@ test('testFunc returns a string', function(t) {
 })
 
 test('showCategories lists all categories', function(t){
-    var expected = 9
     return db.showCategories(t.context.connection)
     .then(function(results) {
-      var actual = results.length
-      t.is(expected, actual)
+      t.is(9, results.length)
+    })
+  })
+
+  test('listRecipes lists all recipes by category', function(t) {
+    return db.listRecipes(2201, t.context.connection)
+    .then(function(results) {
+      t.is(2, results.length)
     })
   })

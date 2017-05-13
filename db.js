@@ -1,7 +1,8 @@
 
 module.exports = {
   testFunc,
-  showCategories
+  showCategories,
+  listRecipes
 }
 
 function testFunc() {
@@ -11,3 +12,8 @@ function testFunc() {
 function showCategories(connection) {
   return connection('categories').select()
 }
+
+function listRecipes(category_id, connection) {
+  return connection('recipes')
+  .where('category_id', category_id)
+  }
