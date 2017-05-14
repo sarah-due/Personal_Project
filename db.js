@@ -1,15 +1,12 @@
 
 module.exports = {
-  testFunc,
   showCategories,
   listRecipesByCat,
   addRecipe,
-  getRecipes
+  getRecipes,
+  viewRecipe
 }
 
-function testFunc() {
-  return('I am a working function!')
-}
 
 function showCategories(connection) {
   return connection('categories').select()
@@ -24,7 +21,12 @@ function listRecipesByCat(category_id, connection) {
   .where('category_id', category_id)
   }
 
-function addRecipe(category_id, recipe_name, chef_name, recipe_image_url, recipe_ingredients, recipe_text, recipe_comments, connection) {
+function viewRecipe(recipe_id, connection) {
+    return connection('recipes')
+    .where('recipe_id', recipe_id)
+  }
+
+function addRecipe(form_inputs, connection) {
   return connection('recipes')
-  .insert({category_id, recipe_name, chef_name, recipe_image_url, recipe_ingredients, recipe_text, recipe_comments})
+  .insert({form_inputs})
 }

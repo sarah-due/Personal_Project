@@ -37,7 +37,7 @@ router.get('/add-recipe', (req, res) => {
 
 router.post('/add-recipe', (req,res) => {
   console.log(req.body);
-  db.addRecipe(req.body.get(category_id), req.body.get(recipe_name), req.body.get(chef_name), req.body.get(recipe_image_url), req.body.get(recipe_ingredients), req.body.get(recipe_text), req.body.get(recipe_comments), req.app.get('connection'))
+  db.addRecipe(req.body, req.app.get('connection'))
   .then(function(recipe) {
     res.redirect('/home')
   })
