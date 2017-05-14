@@ -13,7 +13,7 @@ test('GET /home', (t) => {
     .expect(200)
     .then((res) => {
       const $ = cheerio.load(res.text)
-      t.is($('h2').first().text(), 'Cakes and Tortes')
+      t.is($('h1').first().text(), 'Get Baked Wellington! or Bake It til you Make It')
     })
 })
 
@@ -27,12 +27,12 @@ test('GET /home/category/:id', (t) => {
   })
 })
 
-test('GET /home/add-recipe loads form', (t) => {
+test('GET /home/add-recipe', (t) => {
   return request(t.context.app)
   .get('/home/add-recipe')
   .expect(200)
   .then((res) => {
     const $ = cheerio.load(res.text)
-    t.is($('input').first().text(), 'Name of Recipe')
+    t.is($('h2').first().text(), 'Submit your recipe: ')
     })
 })

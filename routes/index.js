@@ -28,5 +28,9 @@ router.get('/home/category/:id', (req, res) => {
     })
 })
 
+router.get('/home/add-recipe', (req, res) => {
+  res.render('add-recipe')
+})
+
 
 module.exports = router
