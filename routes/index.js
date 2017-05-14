@@ -46,8 +46,7 @@ router.get('/add-recipe', (req, res) => {
 })
 
 router.post('/add-recipe', (req,res) => {
-  console.log(req.body);
-  db.addRecipe(req.body, req.app.get('connection'))
+  db.addRecipe(req.body.category_id, req.body.recipe_name, req.body.chef_name, req.body.recipe_image_url, req.body.recipe_ingredients, req.body.recipe_text, req.body.recipe_comments, req.app.get('connection'))
   .then(function(recipe) {
     res.redirect('/home')
   })
@@ -55,8 +54,6 @@ router.post('/add-recipe', (req,res) => {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 })
-
-
 
 
 module.exports = router

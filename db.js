@@ -26,7 +26,7 @@ function viewRecipe(recipe_id, connection) {
     .where('recipe_id', recipe_id).first()
   }
 
-function addRecipe(form_inputs, connection) {
+function addRecipe(category_id, recipe_name, chef_name, recipe_image_url, recipe_ingredients, recipe_text, recipe_comments, connection) {
   return connection('recipes')
-  .insert({form_inputs})
+  .insert({category_id, recipe_name, chef_name, recipe_image_url, recipe_ingredients, recipe_text, recipe_comments})
 }
