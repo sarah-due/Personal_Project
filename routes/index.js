@@ -19,7 +19,7 @@ router.get('/home', (req, res) => {
 })
 
 router.get('/home/category/:id', (req, res) => {
-  db.listRecipes(req.params.id, req.app.get('connection'))
+  db.listRecipesByCat(req.params.id, req.app.get('connection'))
     .then((recipes) => {
       res.render('categories', {recipes})
     })
@@ -28,8 +28,22 @@ router.get('/home/category/:id', (req, res) => {
     })
 })
 
-router.get('/home/add-recipe', (req, res) => {
-  res.render('add-recipe')
+router.get('/add-recipe', (req, res) => {
+  db.getRecipes(req.app.get('connection'))
+    .then((recipes) => {
+      res.render('add-recipe', {recipes})
+    })
+})
+
+router.post('/add-recipe', (req,res) => {
+  console.log(req.body);
+  db.addRecipe(req.body.get(category_id), req.body.get(recipe_name), req.body.get(chef_name), req.body.get(recipe_image_url), req.body.get(recipe_ingredients), req.body.get(recipe_text), req.body.get(recipe_comments), req.app.get('connection'))
+  .then(function(recipe) {
+    res.redirect('/home')
+  })
+  .catch(function (err) {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 })
 
 

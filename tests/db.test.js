@@ -23,8 +23,15 @@ test('showCategories lists all categories', function(t){
     })
   })
 
+  test('getRecipes gets all recipes', function(t){
+      return db.getRecipes(t.context.connection)
+      .then(function(results) {
+        t.is(1, results.length)
+      })
+    })
+
   test('listRecipes lists all recipes by category', function(t) {
-    return db.listRecipes(2201, t.context.connection)
+    return db.listRecipesByCat(2201, t.context.connection)
     .then(function(results) {
       t.is(1, results.length)
     })

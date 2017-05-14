@@ -27,9 +27,9 @@ test('GET /home/category/:id', (t) => {
   })
 })
 
-test('GET /home/add-recipe', (t) => {
+test('GET /add-recipe', (t) => {
   return request(t.context.app)
-  .get('/home/add-recipe')
+  .get('/add-recipe')
   .expect(200)
   .then((res) => {
     const $ = cheerio.load(res.text)
