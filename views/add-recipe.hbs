@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <h2>Submit your recipe: </h2>
+  </div>
+
+  <div class="row">
+    <form class="recipe-form" action="/add-recipe" method="post">
+      <select class="drop-menu" name="category_id">
+        <option value="2201">Cakes and Tortes</option>
+        <option value="2202">Pies, Crumbles, and Tarts</option>
+        <option value="2203">Cookies and Bars</option>
+        <option value="2204">Custard, Mousse, and Pudding</option>
+        <option value="2205">Candy and Confectioneries</option>
+        <option value="2206">Bread</option>
+        <option value="2207">Muffins and Breakfast Pastries</option>
+        <option value="2208">Ice Cream and Frozen Desserts</option>
+        <option value="2209">Frosting, Glazes, and Sauces</option>
+      </select>
+      <input type="text" name="recipe_name" placeholder='Name of Recipe'>
+      <input type="text" name="chef_name" placeholder="Name of Chef" value="">
+      <input type="text" name="recipe_image_url" placeholder="Recipe image url" value="">
+      <textarea name="recipe_ingredients" placeholder="Ingredients" rows="8" cols="80"></textarea>
+      <textarea name="recipe_text" placeholder="Method" rows="8" cols="80"></textarea>
+      <textarea name="recipe_comments" placeholder="Comments About Recipe (optional)" rows="8" cols="80"></textarea>
+      <input class="submit-btn" type="submit" value="Submit Recipe">
+    </form>
+  </div>
+
+</div><!-- end container -->

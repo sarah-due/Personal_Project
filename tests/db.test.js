@@ -1,6 +1,3 @@
-// Note: we use AVA here because it makes setting up the
-// conditions for each test relatively simple. The same
-// can be done with Tape using a bit more code.
 
 var test = require('ava')
 
@@ -9,18 +6,31 @@ configureDatabase(test)
 
 var db = require('../db')
 
-test('testFunc returns a string', function(t) {
-      var expected = 'I am a working function!'
-      var actual = db.testFunc()
-      console.log(actual)
-      t.is(expected, actual)
-})
 
-test('showCategories lists all categories', function(t){
-    var expected = 9
+test('showCategories lists all categories', (t)=> {
     return db.showCategories(t.context.connection)
     .then(function(results) {
-      var actual = results.length
-      t.is(expected, actual)
+      t.is(9, results.length)
+    })
+  })
+
+  test('viewRecipe shows a recipe by id', (t)=> {
+    return db.viewRecipe(99901, t.context.connection)
+    .then(function(result) {
+      t.is(result.recipe_name, 'Chocolate Layer Cake');
+    })
+  })
+
+  test('getRecipes gets all recipes', (t)=> {
+      return db.getRecipes(t.context.connection)
+      .then(function(results) {
+        t.is(1, results.length)
+      })
+    })
+
+  test('listRecipes lists all recipes by category', (t)=> {
+    return db.listRecipesByCat(2201, t.context.connection)
+    .then(function(results) {
+      t.is(1, results.length)
     })
   })
