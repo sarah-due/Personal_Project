@@ -23,7 +23,7 @@ function listRecipesByCat(category_id, connection) {
 
 function viewRecipe(recipe_id, connection) {
     return connection('recipes')
-    .where('recipe_id', recipe_id)
+    .where('recipe_id', recipe_id).first()
   }
 
 function addRecipe(form_inputs, connection) {

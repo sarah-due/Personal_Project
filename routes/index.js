@@ -28,6 +28,16 @@ router.get('/home/category/:id', (req, res) => {
     })
 })
 
+router.get('/home/recipe/:id', (req, res)=> {
+  db.viewRecipe(req.params.id, req.app.get('connection'))
+    .then((recipe) => {
+      res.render('view_recipe', recipe)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 router.get('/add-recipe', (req, res) => {
   db.getRecipes(req.app.get('connection'))
     .then((recipes) => {
@@ -45,6 +55,8 @@ router.post('/add-recipe', (req,res) => {
     res.status(500).send('DATABASE ERROR: ' + err.message)
   })
 })
+
+
 
 
 module.exports = router

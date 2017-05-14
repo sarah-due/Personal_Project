@@ -20,7 +20,7 @@ test('showCategories lists all categories', (t)=> {
   test('viewRecipe shows a recipe by id', (t)=> {
     return db.viewRecipe(99901, t.context.connection)
     .then(function(result) {
-      t.is(1, result.length);
+      t.is(result.recipe_name, 'Chocolate Layer Cake');
     })
   })
 
