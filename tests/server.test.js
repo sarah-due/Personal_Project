@@ -23,7 +23,16 @@ test('GET /home/category/:id', (t) => {
   .expect(200)
   .then((res) => {
     const $ = cheerio.load(res.text)
-    console.log($('h4').first().text());
     t.is($('h4').first().text(), 'By Chef: Ina Garten aka The Barefoot Contessa')
   })
+})
+
+test('GET /home/add-recipe loads form', (t) => {
+  return request(t.context.app)
+  .get('/home/add-recipe')
+  .expect(200)
+  .then((res) => {
+    const $ = cheerio.load(res.text)
+    t.is($('input').first().text(), 'Name of Recipe')
+    })
 })

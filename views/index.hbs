@@ -1,4 +1,19 @@
-{{#each categories}}
-  <a href="/home/category/{{id}}"><img src='{{image_url}}' /> Click </a>
-  <h2>{{category_name}}</h2>
-{{/each}}
+<div class='container'>
+   <div class="row">
+     <h1 id="logo">Get Baked Wellington! or Bake It til you Make It</h1>
+     <h3 class="logo-byline">Your new favourite website for sharing recipes and favourite sweet spots around Wellington </h3>
+  </div>
+
+  <div class="row">
+    {{#each categories}}
+      <h3>{{category_name}}</h2>
+      <a href="/home/category/{{id}}"><img src='{{image_url}}' /> Click </a>
+    {{/each}}
+  </div>
+
+  <div class="row">
+    <a href='/home/add-recipe'>Share a Recipe</a>
+    <a href='/home/dessert-mapper'>Baking? Nobody got time for that. Show me where I can buy some sweets close to me!</a>
+  </div>
+
+</div> <!--end container-->
