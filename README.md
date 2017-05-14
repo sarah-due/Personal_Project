@@ -1,4 +1,4 @@
-#Personal Goals:
+** #Personal Goals: **
 
 - To be able to start with a small, functional app that I can expand and make more interactive as we learn more advanced coding throughout the course.
 
@@ -13,11 +13,9 @@
 - Learn how to make a search bar to navigate the website.
 
 
-#User Stories:
+** #User Stories: **
 
 - I can browse recipes by category.
-
-- I can browse recipes based on GF/DF/Vegan tags.
 
 - I can comment on a recipe.
 
@@ -28,3 +26,7 @@
 - If I don't feel like baking my recipe, I can find the closest bakery to me to go buy something instead!
 
 - I can use a search bar to look for recipes.
+
+- I can upload my own photos of my recipe when I submit it.
+
+- I can browse recipes based on GF/DF/Vegan tags.
